@@ -1,0 +1,31 @@
+$breakpoints: (
+    mobile: 0px,
+    lgMobile: 350,
+    smTablet: 500,
+    tablet: 760,
+    desktop: 1024,
+    mdDesktop: 1240,
+    lgDesktop: 1440,
+    xlDesktop: 1920,
+    xxlDesktop: 2160
+);
+
+@function checkDir($dir) {
+    @if $dir == 'down' {
+        @return 'max-width';
+    }
+    @else {
+        @return 'min-width';
+    }
+}
+
+@mixin breakpoint($breakpoint, $dir: up) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (checkDir($dir): #{map-get($breakpoints, $breakpoint)}px ) {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}

@@ -1,0 +1,22 @@
+$base-colors: (
+    dark: #000,
+    light: #FFF,
+    base: #0a0a0a,
+    border: #242424,
+    link: #00ccff,
+    copy: #e8e8e8,
+    darkcopy: #8e8e8e,
+    error: red,
+);
+
+$extended-colors: (
+    link-hover: darken(map-get($base-colors, link), 12%),
+    offlight: darken(map-get($base-colors, light), 12%),
+    offdark: lighten(map-get($base-colors, dark), 12%)
+);
+
+$colors: map-merge($base-colors, $extended-colors);
+
+@function color($key) {
+    @return map-get($colors, $key);
+}
