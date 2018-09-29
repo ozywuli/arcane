@@ -1,0 +1,221 @@
+html, body {
+    background: color(base);
+    color: color(light);
+}
+
+body {
+    font-family: font(sans);
+    font-size: 1.4rem;
+
+    @include breakpoint(smTablet) {
+        font-size: 1.6rem;
+    }
+
+    @include breakpoint(tablet) {
+        font-size: 1.8rem;
+    }
+
+    @each $key, $value in $breakpoints {
+        --#{$key}: #{$value}
+    }
+}
+
+a {
+    color: color(link);
+    transition: all transition(yi) ease;
+
+    .no-touchevents &:hover {
+        color: color(link-hover)
+    }
+}
+
+h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a {
+    font-family: font(monospace);
+}
+
+p {
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+p, li {
+    font-weight: 300;
+    color: color(copy);
+}
+
+.js-toggle > * {
+    pointer-events: none;
+}
+
+
+
+/*------------------------------------*\
+  Input field
+\*------------------------------------*/
+input {
+    padding: 12px;
+    line-height: 1;
+    font-size: 1.2rem;
+    display: inline-block;
+    height: 42px;
+}
+
+input[type="email"] {
+    background: color(dark);
+    border: 1px solid color(link);
+    color: color(light);
+    font-family: font(sans);
+
+    @include breakpoint(tablet) {
+        width: 210px;
+    }
+}
+
+input[type="submit"] {
+    background: color(link);
+    color: color(light);
+    text-transform: uppercase;
+    font-family: font(monospace);
+    transition: all transition(yi) ease;
+    .no-touchevents &:hover {
+        cursor: pointer;
+        background: color(link-hover);
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px color(offlight) inset;
+    -webkit-text-fill-color: color(light) !important;
+}
+//==============================================================================
+// Webkit scrollbar styles
+//==============================================================================
+$scrollbarWidth: 10px;
+
+::-webkit-scrollbar {
+    width: $scrollbarWidth;
+    height: $scrollbarWidth;
+}
+::-webkit-scrollbar-button {
+
+}
+::-webkit-scrollbar-track {
+    background: color(border);
+    height: $scrollbarWidth;
+}
+::-webkit-scrollbar-track-piece {
+
+}
+::-webkit-scrollbar-thumb {
+    background: color(offlight);
+    &:hover {
+        background: color(link);
+    }
+    &:active {
+        background: color(link-hover);
+    }
+}
+::-webkit-scrollbar-corner {
+    background-color: color(offdark);
+}
+::-webkit-resizer {
+}
+
+
+//==============================================================================
+// 
+//==============================================================================
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    // vertical-align: center;
+    line-height: 1.25;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    line-height: 1.25;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    line-height: 1.25;
+}
+:-moz-placeholder { /* Firefox 18- */
+    line-height: 1.25;
+}
+
+//==============================================================================
+// Selection
+//==============================================================================
+::selection {
+    background: color(link-hover);
+    color: color(light);
+}
+
+a::selection {
+    background: color(link-hover);
+    color: color(link);
+}
+
+::-moz-selection {
+    background: color(link-hover);
+    color: color(light);
+}
+
+a::-moz-selection {
+    background: color(link-hover);
+    color: color(link);
+}
+
+
+//==============================================================================
+// Google Search
+//==============================================================================
+.search {
+    max-width: 960px;
+}
+
+.gsst_a {
+    padding-top: 8px !important;
+}
+
+.gsc-control-cse {
+    font-family: font(sans) !important;
+}
+
+.cse .gsc-search-button-v2, .gsc-search-button-v2 {
+    padding: 10px 27px !important;
+}
+
+.gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+    padding-left: 0 !important;
+}
+
+.gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+    border-top: 1px solid color(border) !important;
+}
+
+.gsib_a {
+    padding: 8px !important;
+}
+
+.gsc-input-box {
+    border: 1px solid color(border) !important;
+}
+
+.gsc-input,
+.gsc-input-box {
+    background: color(base) !important;
+    color: color(copy) !important;
+}
+
+.gsst_a .gscb_a {
+    color: color(copy) !important;
+}
+
+.gsst_a:hover .gscb_a, .gsst_a:focus .gscb_a {
+    color: color(link-hover);
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    font-family: font(sans) !important;
+}
+
+.cse .gsc-search-button-v2, .gsc-search-button-v2 {
+    border-radius: initial !important;
+}

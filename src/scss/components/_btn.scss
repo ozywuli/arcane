@@ -1,0 +1,23 @@
+.btn {
+    font-family: font(monospace);
+    border: 1px solid color(border);
+    text-transform: uppercase;
+    transition: all transition(yi) ease;
+    padding: 12px 16px;
+    display: inline-block;
+    color: color(copy);
+    font-size: 1.2rem;
+
+    .no-touchevents &:hover {
+        border: 1px solid color(link-hover);
+        background: color(link-hover);
+        color: color(light);
+    }
+
+    &.mod-lg {
+        @include breakpoint(tablet) {
+            font-size: 1.8rem;
+            padding: 18px 24px;
+        }
+    }
+}

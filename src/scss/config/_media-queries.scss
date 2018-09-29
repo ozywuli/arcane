@@ -1,0 +1,36 @@
+// https://www.sitepoint.com/using-sass-maps/
+// https://stackoverflow.com/questions/3525007/making-a-sass-mixin-with-optional-arguments
+// https://stackoverflow.com/questions/8533432/creating-or-referencing-variables-dynamically-in-sass
+
+$breakpoints: (
+    mobile: 0px,
+    lgMobile: 350,
+    smTablet: 500,
+    tablet: 760,
+    desktop: 1023,
+    mdDesktop: 1240,
+    lgDesktop: 1440,
+    xlDesktop: 1700,
+    xxlDesktop: 1920,
+    xxxlDesktop: 2160
+);
+
+@function checkDirection($dir) {
+    @if $dir == 'down' {
+        @return 'max-width';
+    }
+    @else {
+        @return 'min-width';
+    }
+}
+
+@mixin breakpoint($breakpoint, $dir: up) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (checkDirection($dir): #{map-get($breakpoints, $breakpoint)}px ) {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}

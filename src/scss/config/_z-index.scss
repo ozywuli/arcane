@@ -1,0 +1,14 @@
+$zi: (
+    siteNavbar: 200,
+    siteMenu: 150,
+    modal: 120,
+    siteFooter: 100,
+    base: 1
+);
+
+/**
+ * Z-index function
+ */
+@function zi($key) {
+    @return map-get($zi, $key);
+}

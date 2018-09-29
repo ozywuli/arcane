@@ -1,0 +1,14 @@
+$transitions: (
+    yi: 150ms,
+    er: 250ms,
+    san: 350ms
+);
+
+@function transition($key) {
+    @return map-get($transitions, $key);
+}
+
+$siteNavBar: (
+    desktop: 54px,
+    mobile: 46px
+);

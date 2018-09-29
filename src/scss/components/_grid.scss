@@ -1,0 +1,109 @@
+.grid-title {
+    @include in-page-subtitle();
+    color: color(link);
+    margin-bottom: 24px;
+}
+
+.grid-fig {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:before {
+        background: linear-gradient(45deg, rgba(22,22,25, 0.9) 1%, rgba(19,51,94, 0.6) 35%, rgba(32,34,51, 0.75) 100%);
+        z-index: 1;
+    }
+
+    &:after {
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.24);
+        transition: all transition(yi) ease;
+
+        .no-touchevents .grid-link:hover & {
+            opacity: 1;
+        }
+    }
+}
+
+.grid-fig-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.grid-item {
+    position: relative;
+    background: color(offdark);
+}
+
+.grid-info {
+    position: absolute;
+    padding: 16px;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.grid-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    color: color(light);
+
+    .no-touchevents &:hover {
+        color: color(light);
+    }
+}
+
+.grid-date {
+    position: relative;
+
+    &:after {
+        content: '|';
+        margin: 0 8px;
+    }
+}
+
+.grid-meta {
+    font-size: 1.2rem;
+}
+
+.grid-meta-title {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    line-height: 1.2;
+
+    @include breakpoint(tablet) {
+        font-size: 2.1rem;
+    }
+
+    a {
+        color: color(light);
+    }
+}
+
+.grid-author-copy {
+    text-transform: uppercase;
+}

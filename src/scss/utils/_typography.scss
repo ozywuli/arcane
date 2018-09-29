@@ -1,0 +1,19 @@
+.ch {
+    font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+}
+
+.extend-in-page-title {
+    @include in-page-title;
+}
+
+.extend-in-page-subtitle {
+    @include in-page-subtitle;
+}
+
+.caption {
+    @include caption();
+}
+
+.title {
+    font-family: font(monospace);
+}
