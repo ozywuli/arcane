@@ -1,8 +1,0 @@
-$fonts: (
-    sans: #{Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif},
-    monospace: #{'Roboto Mono', monospace}
-);
-
-@function font($key) {
-    @return map-get($fonts, $key);
-}
