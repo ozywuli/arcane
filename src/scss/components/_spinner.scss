@@ -1,0 +1,31 @@
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.is-hidden {
+        display: none;
+    }
+}
+
+.spinner-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid color(dark);
+    border-top: 2px solid color(link);
+    border-radius: 50%;
+    animation: spinner 720ms linear infinite;
+
+    .spinner.is-hidden & {
+        animation: none;
+    }
+}
