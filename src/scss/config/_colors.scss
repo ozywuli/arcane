@@ -7,6 +7,7 @@ $base-colors: (
     copy: #e8e8e8,
     offdark: #191a1a,
     offlight: #484848,
+    darkcopy: #8e8e8e,
     link: #00ccff,
     danger: red,
     warning: orange,
@@ -15,7 +16,9 @@ $base-colors: (
 
 // Extended colors
 $extended-colors: (
-    link-hover: darken(map-get($base-colors, link), 12%) // #009bc2
+    link-hover: darken(map-get($base-colors, link), 12%), // #009bc2
+    offlight: darken(map-get($base-colors, light), 12%),
+    offdark: lighten(map-get($base-colors, dark), 12%)
 );
 
 // color(dark)

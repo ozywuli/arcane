@@ -49,9 +49,9 @@ p, li {
 
 
 
-/*------------------------------------*\
-  Input field
-\*------------------------------------*/
+//==============================================================================
+// Input field
+//==============================================================================
 input {
     padding: 12px;
     line-height: 1;
@@ -60,18 +60,25 @@ input {
     height: 42px;
 }
 
-input[type="email"] {
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+textarea
+{
     background: color(dark);
     border: 1px solid color(link);
     color: color(light);
     font-family: font(sans);
+    width: 100%;
 
     @include breakpoint(tablet) {
         width: 210px;
     }
 }
 
-input[type="submit"] {
+input[type="submit"],
+button
+{
     background: color(link);
     color: color(light);
     text-transform: uppercase;
@@ -87,6 +94,21 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px color(offlight) inset;
     -webkit-text-fill-color: color(light) !important;
 }
+
+textarea {
+    height: 100px;
+    padding: 12px;
+}
+
+select {
+    border: 1px solid color(border);
+    background: color(dark);
+    color: color(light);
+    padding: 6px 12px;
+}
+
+
+
 //==============================================================================
 // Webkit scrollbar styles
 //==============================================================================

@@ -1,0 +1,19 @@
+//==============================================================================
+// Form
+//==============================================================================
+@mixin form {
+    display: inline-block;
+    border: 1px solid color(border);
+    padding: 18px;
+    width: 336px;
+}
+  
+@mixin form-title {
+    margin-bottom: 24px;
+}
+
+@mixin form-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}

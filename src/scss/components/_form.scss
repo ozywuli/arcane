@@ -1,0 +1,20 @@
+//==============================================================================
+// Form
+//==============================================================================
+.form {
+    @include form();
+}
+
+.form-avatar {
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.form-title {
+    @include form-title();
+}
+
+.form-label {
+    @include form-label();
+}
