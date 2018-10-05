@@ -139,6 +139,7 @@
 
 @mixin map-control-pos($pos) {
     position: absolute;
+    z-index: zi(base);
 
     @if $pos == 'top-right' {
         top: 8px;
