@@ -1,0 +1,11 @@
+.navbar {
+    @apply flex justify-between bg-black fixed pin-t pin-r pin-l z-50 border-b border-solid border-grey-darkest;
+    height: siteNavbar('mobile');
+    @include breakpoint('desktop') {
+        height: siteNavbar('desktop');
+    }
+}
+
+.navbar-dropdown {
+    @apply absolute;
+}

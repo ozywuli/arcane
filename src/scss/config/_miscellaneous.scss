@@ -12,3 +12,9 @@ $siteNavBar: (
     desktop: 54px,
     mobile: 46px
 );
+
+@function siteNavbar($key) {
+    @return map-get($siteNavBar, $key);
+}
+
+$siteSidebarWidth: config('width.280');

@@ -1,0 +1,8 @@
+.footer {
+    @apply relative;
+    background: config('colors.black');
+}
+
+.footer-row {
+    @apply p-24 flex justify-between text-xs font-mono uppercase;
+}

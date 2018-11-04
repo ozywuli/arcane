@@ -1,0 +1,16 @@
+.sidebar {
+    @apply fixed pin-t pin-b bg-black min-w-280 z-40;
+
+    padding-top: siteNavbar('mobile');
+    @include breakpoint('desktop') {
+        padding-top: siteNavbar('desktop');
+    }
+
+    &-compressed {
+        display: none;
+    }
+}
+
+.sidebar-link {
+    @apply block text-white px-16 py-8 text-sm;
+}
