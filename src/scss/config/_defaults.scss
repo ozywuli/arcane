@@ -129,7 +129,7 @@ $scrollbarWidth: 10px;
 
 }
 ::-webkit-scrollbar-thumb {
-    background: color(offlight);
+    background: color(darker);
     &:hover {
         background: color(link);
     }
