@@ -1,0 +1,11 @@
+.radio-group {
+    color: blue;
+}
+
+.radio-button-el {
+    &:checked {
+        ~ .radio-button-inner {
+            color: red;
+        }
+    }
+}
