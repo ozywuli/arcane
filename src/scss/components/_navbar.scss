@@ -1,7 +1,22 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+    @apply flex items-center justify-between;
+    @apply fixed pin-t pin-r pin-l;
     border-bottom: 1px solid color(border);
+    padding: 4px 16px;
+    height: siteNavbar('mobile');
+    z-index: zi(siteNavbar);
+    background: color(dark);
+    @include breakpoint('desktop') {
+        height: siteNavbar('desktop');
+    }
+}
+
+/* Title */
+.navbar-title {
+    font-size: 1.8rem;
+}
+
+/* Dropdown */
+.navbar-dropdown {
+    @apply absolute;
 }

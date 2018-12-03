@@ -1,0 +1,19 @@
+.sidebar {
+    @apply fixed pin-t pin-b;
+    background: color(dark);
+    border-right: 1px solid color(border);
+    width: $siteSidebarWidth;
+}
+
+.sidebar-container {
+
+}
+
+.sidebar-item {
+
+}
+
+.sidebar-link {
+    @apply block px-16 py-8;
+    color: color(light);
+}

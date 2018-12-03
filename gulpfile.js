@@ -15,6 +15,7 @@ const source = require('vinyl-source-stream')
 const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 const util = require('gulp-util')
+const tailwindcss = require('tailwindcss');
 
 // Included paths
 let includePaths = ['.', 'node_modules'];
@@ -50,6 +51,7 @@ gulp.task('build:scss', () => {
             this.emit('end');
         }))
         .pipe(postcss([
+            tailwindcss('./tailwind.js'),
             autoprefixer({
                 browsers: [
                     'last 2 versions', 
@@ -60,8 +62,9 @@ gulp.task('build:scss', () => {
                 ]
             })
         ]))
-        .pipe(gulp.dest(path.join('examples', 'assets')))
-        .pipe(browsersync.stream({match: '**/*.css'}))
+        // .pipe(gulp.dest(path.join('examples', 'assets')))
+        .pipe(gulp.dest(path.join('dist', 'css')))
+        // .pipe(browsersync.stream({match: '**/*.css'}))
 })
 
 gulp.task('build:js', () => {
@@ -77,38 +80,44 @@ gulp.task('build:js', () => {
         .pipe(source(`main.js`))
         .pipe(buffer())
         .pipe(gulp.dest('dist'))
-        .pipe(rename(`main.min.js`))
+        .pipe(gulp.dest(path.join('dist', 'js')))
         .pipe(sourcemaps.init({
             loadMaps: true
         }))
         .pipe(uglify())
             .on('error', showError)
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('dist'))
-        .pipe(browsersync.stream({match: path.join('**','*.js')}))
+        .pipe(gulp.dest(path.join('dist', 'js')))
+        // .pipe(browsersync.stream({match: path.join('**','*.js')}))
 })
 
 gulp.task('build', gulp.series('clean', 'build:scss', 'build:js'));
 
 gulp.task('watch', gulp.series('build', () => {
-    browsersync.init({
-        open: false,
-        notify: false,
-        port: 9000,
-        server: {
-            baseDir: [
-                path.join('tests'),
-                path.join('examples', 'tests'),
-                path.join('examples', 'pages'), 
-                path.join('examples', 'assets'), 
-                'dist'
-            ],
-            directory: true
-        }
-    })
+    // browsersync.init({
+    //     open: false,
+    //     notify: false,
+    //     port: 9000,
+    //     server: {
+    //         baseDir: [
+    //             path.join('tests'),
+    //             path.join('examples', 'tests'),
+    //             path.join('examples', 'pages'), 
+    //             path.join('examples', 'assets'), 
+    //             'dist'
+    //         ],
+    //         directory: true
+    //     }
+    // })
 
     gulp.watch(path.join('src', 'js', '*.js'), gulp.series('build:js'))
-    gulp.watch(path.join('src', 'scss', '*.scss'), gulp.series('build:scss'))
+    gulp.watch(
+        [
+            path.join('src', 'scss', '**', '*.scss'),
+            path.join('tailwind.js')
+        ], 
+        gulp.series('build:scss')
+    )
     gulp.watch(path.join('examples', 'pages', '*.html'), browsersync.reload)
 }));
 

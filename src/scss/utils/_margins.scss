@@ -1,0 +1,40 @@
+$margins: (
+    'auto': 'auto',
+    'px': '1px',
+    '0': '0',
+    '6': '0.6rem',
+    '9': '0.9rem',
+    '12': '1.2rem',
+    '16': '1.6rem',
+    '18': '1.8rem',
+    '21': '2.1rem',
+    '24': '2.4rem',
+    '27': '2.7rem',
+);
+
+@each $key, $value in $margins {
+    @mixin mx-#{$key}() {
+        margin-right: #{$value};
+        margin-left: #{$value};
+    }
+    .mx-#{$key} {
+        margin-right: #{$value};
+        margin-left: #{$value};
+    }
+    .my-#{$key} {
+        margin-top: #{$value};
+        margin-bottom: #{$value};
+    }
+    .mt-#{$key} {
+        margin-top: #{$value};
+    }
+    .mr-#{$key} {
+        margin-right: #{$value};
+    }
+    .mb-#{$key} {
+        margin-left: #{$value};
+    }
+    .ml-#{$key} {
+        margin-left: #{$value};
+    }
+}
