@@ -1,3 +1,5 @@
+var Color = require('color');
+
 /*
 Tailwind - The Utility-First CSS Framework
 A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink),
@@ -37,9 +39,21 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
+function rgba(r, g, b, alpha) {
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 let colors = {
 
     'transparent': 'transparent',
+
+    'color-border': '#1b1b1b',
+    'color-link': '#00ccff',
+    'color-copy': '#e8e8e8',
+    'color-base': '#0a0a0a',
+    'color-base-highlight': '#181818',
+
+    'black-80': rgba(...Color.rgb('#000').array(), 0.8),
 
     'black': '#000',
     'grey-darkest': '#3d4852',
@@ -50,7 +64,7 @@ let colors = {
     'grey-lighter': '#f1f5f8',
     'grey-lightest': '#f8fafc',
     'white': '#ffffff',
-  
+
     'red-darkest': '#3b0d0c',
     'red-darker': '#621b18',
     'red-dark': '#cc1f1a',
@@ -58,7 +72,7 @@ let colors = {
     'red-light': '#ef5753',
     'red-lighter': '#f9acaa',
     'red-lightest': '#fcebea',
-  
+
     'orange-darkest': '#462a16',
     'orange-darker': '#613b1f',
     'orange-dark': '#de751f',
@@ -66,7 +80,7 @@ let colors = {
     'orange-light': '#faad63',
     'orange-lighter': '#fcd9b6',
     'orange-lightest': '#fff5eb',
-  
+
     'yellow-darkest': '#453411',
     'yellow-darker': '#684f1d',
     'yellow-dark': '#f2d024',
@@ -74,7 +88,7 @@ let colors = {
     'yellow-light': '#fff382',
     'yellow-lighter': '#fff9c2',
     'yellow-lightest': '#fcfbeb',
-  
+
     'green-darkest': '#0f2f21',
     'green-darker': '#1a4731',
     'green-dark': '#1f9d55',
@@ -82,7 +96,7 @@ let colors = {
     'green-light': '#51d88a',
     'green-lighter': '#a2f5bf',
     'green-lightest': '#e3fcec',
-  
+
     'teal-darkest': '#0d3331',
     'teal-darker': '#20504f',
     'teal-dark': '#38a89d',
@@ -90,7 +104,7 @@ let colors = {
     'teal-light': '#64d5ca',
     'teal-lighter': '#a0f0ed',
     'teal-lightest': '#e8fffe',
-  
+
     'blue-darkest': '#12283a',
     'blue-darker': '#1c3d5a',
     'blue-dark': '#2779bd',
@@ -98,7 +112,7 @@ let colors = {
     'blue-light': '#6cb2eb',
     'blue-lighter': '#bcdefa',
     'blue-lightest': '#eff8ff',
-  
+
     'indigo-darkest': '#191e38',
     'indigo-darker': '#2f365f',
     'indigo-dark': '#5661b3',
@@ -106,7 +120,7 @@ let colors = {
     'indigo-light': '#7886d7',
     'indigo-lighter': '#b2b7ff',
     'indigo-lightest': '#e6e8ff',
-  
+
     'purple-darkest': '#21183c',
     'purple-darker': '#382b5f',
     'purple-dark': '#794acf',
@@ -114,7 +128,7 @@ let colors = {
     'purple-light': '#a779e9',
     'purple-lighter': '#d6bbfc',
     'purple-lightest': '#f3ebff',
-  
+
     'pink-darkest': '#451225',
     'pink-darker': '#6f213f',
     'pink-dark': '#eb5286',
@@ -123,9 +137,9 @@ let colors = {
     'pink-lighter': '#ffbbca',
     'pink-lightest': '#ffebef',
   }
-  
+
   module.exports = {
-  
+
     /*
     |-----------------------------------------------------------------------------
     | Colors                                  https://tailwindcss.com/docs/colors
@@ -138,10 +152,10 @@ let colors = {
     | .error { color: config('colors.red') }
     |
     */
-  
+
     colors: colors,
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Screens                      https://tailwindcss.com/docs/responsive-design
@@ -160,15 +174,15 @@ let colors = {
     | Class name: .{screen}:{utility}
     |
     */
-  
+
     screens: {
       'sm': '576px',
       'md': '768px',
       'lg': '992px',
       'xl': '1200px',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Fonts                                    https://tailwindcss.com/docs/fonts
@@ -186,7 +200,7 @@ let colors = {
     | Class name: .font-{name}
     |
     */
-  
+
     fonts: {
       'sans': [
         'system-ui',
@@ -219,8 +233,8 @@ let colors = {
         'monospace',
       ]
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Text sizes                         https://tailwindcss.com/docs/text-sizing
@@ -239,22 +253,22 @@ let colors = {
     | Class name: .text-{size}
     |
     */
-  
+
     textSizes: {
       'xxs': '1rem',
-      'xs': '1.2rem',     
-      'sm': '1.4rem',   
-      'base': '1.6rem', 
+      'xs': '1.2rem',
+      'sm': '1.4rem',
+      'base': '1.6rem',
       'offbase': '1.8rem',
-      'lg': '2.1rem', 
-      'xl': '2.8rem',  
-      '2xl': '3.2rem',  
+      'lg': '2.1rem',
+      'xl': '2.8rem',
+      '2xl': '3.2rem',
       '3xl': '4rem',
-      '4xl': '5.6rem', 
-      '5xl': '7.2rem',    
+      '4xl': '5.6rem',
+      '5xl': '7.2rem',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Font weights                       https://tailwindcss.com/docs/font-weight
@@ -268,7 +282,7 @@ let colors = {
     | Class name: .font-{weight}
     |
     */
-  
+
     fontWeights: {
       'hairline': 100,
       'thin': 200,
@@ -280,8 +294,8 @@ let colors = {
       'extrabold': 800,
       'black': 900,
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Leading (line height)              https://tailwindcss.com/docs/line-height
@@ -293,15 +307,15 @@ let colors = {
     | Class name: .leading-{size}
     |
     */
-  
+
     leading: {
       'none': 1,
       'tight': 1.25,
       'normal': 1.5,
       'loose': 2,
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Tracking (letter spacing)       https://tailwindcss.com/docs/letter-spacing
@@ -313,14 +327,14 @@ let colors = {
     | Class name: .tracking-{size}
     |
     */
-  
+
     tracking: {
       'tight': '-0.05em',
       'normal': '0',
       'wide': '0.05em',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Text colors                         https://tailwindcss.com/docs/text-color
@@ -333,10 +347,10 @@ let colors = {
     | Class name: .text-{color}
     |
     */
-  
+
     textColors: colors,
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Background colors             https://tailwindcss.com/docs/background-color
@@ -349,10 +363,10 @@ let colors = {
     | Class name: .bg-{color}
     |
     */
-  
+
     backgroundColors: colors,
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Background sizes               https://tailwindcss.com/docs/background-size
@@ -365,14 +379,14 @@ let colors = {
     | Class name: .bg-{size}
     |
     */
-  
+
     backgroundSize: {
       'auto': 'auto',
       'cover': 'cover',
       'contain': 'contain',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Border widths                     https://tailwindcss.com/docs/border-width
@@ -385,7 +399,7 @@ let colors = {
     | Class name: .border{-side?}{-width?}
     |
     */
-  
+
     borderWidths: {
       default: '1px',
       '0': '0',
@@ -393,8 +407,8 @@ let colors = {
       '4': '4px',
       '8': '8px',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Border colors                     https://tailwindcss.com/docs/border-color
@@ -411,10 +425,10 @@ let colors = {
     | Class name: .border-{color}
     |
     */
-  
+
     borderColors: global.Object.assign({ default: colors['grey-light'] }, colors),
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Border radius                    https://tailwindcss.com/docs/border-radius
@@ -430,7 +444,7 @@ let colors = {
     | Class name: .rounded{-side?}{-size?}
     |
     */
-  
+
     borderRadius: {
       'none': '0',
       'sm': '.125rem',
@@ -438,8 +452,8 @@ let colors = {
       'lg': '.5rem',
       'full': '9999px',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Width                                    https://tailwindcss.com/docs/width
@@ -459,13 +473,16 @@ let colors = {
     | Class name: .w-{size}
     |
     */
-  
+
     width: {
       'auto': 'auto',
       'px': '1px',
       '10': '1rem',
+      '12': '1.2rem',
+      '16': '1.6rem',
       '18': '1.8rem',
       '21': '2.1rem',
+      '24': '2.4rem',
       '28': '2.8rem',
       '32': '3.2rem',
       '40': '4rem',
@@ -494,8 +511,8 @@ let colors = {
       'full': '100%',
       'screen': '100vw'
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Height                                  https://tailwindcss.com/docs/height
@@ -510,12 +527,13 @@ let colors = {
     | Class name: .h-{size}
     |
     */
-  
+
     height: {
       'auto': 'auto',
       'px': '1px',
       '10': '1rem',
       '12': '1.2rem',
+      '16': '1.6rem',
       '18': '1.8rem',
       '21': '2.1rem',
       '24': '2.4rem',
@@ -535,8 +553,8 @@ let colors = {
       'full': '100%',
       'screen': '100vh'
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Minimum width                        https://tailwindcss.com/docs/min-width
@@ -550,14 +568,45 @@ let colors = {
     | Class name: .min-w-{size}
     |
     */
-  
+
     minWidth: {
-      '0': '0',
+      'px': '1px',
+      '10': '1rem',
+      '12': '1.2rem',
+      '16': '1.6rem',
+      '18': '1.8rem',
+      '21': '2.1rem',
+      '24': '2.4rem',
+      '28': '2.8rem',
+      '32': '3.2rem',
+      '40': '4rem',
+      '56': '5.6rem',
+      '60': '6rem',
+      '80': '8rem',
+      '100': '10rem',
+      '120': '12rem',
+      '160': '16rem',
+      '240': '24rem',
       '280': '28rem',
+      '320': '32rem',
+      '480': '48rem',
+      '640': '64rem',
+      '1/2': '50%',
+      '1/3': '33.33333%',
+      '2/3': '66.66667%',
+      '1/4': '25%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.66667%',
+      '5/6': '83.33333%',
       'full': '100%',
+      'screen': '100vw'
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Minimum height                      https://tailwindcss.com/docs/min-height
@@ -571,14 +620,14 @@ let colors = {
     | Class name: .min-h-{size}
     |
     */
-  
+
     minHeight: {
       '0': '0',
       'full': '100%',
       'screen': '100vh'
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Maximum width                        https://tailwindcss.com/docs/max-width
@@ -593,21 +642,45 @@ let colors = {
     | Class name: .max-w-{size}
     |
     */
-  
+
     maxWidth: {
-      'xs': '20rem',
-      'sm': '30rem',
-      'md': '40rem',
-      'lg': '50rem',
-      'xl': '60rem',
-      '2xl': '70rem',
-      '3xl': '80rem',
-      '4xl': '90rem',
-      '5xl': '100rem',
+      'px': '1px',
+      '10': '1rem',
+      '12': '1.2rem',
+      '16': '1.6rem',
+      '18': '1.8rem',
+      '21': '2.1rem',
+      '24': '2.4rem',
+      '28': '2.8rem',
+      '32': '3.2rem',
+      '40': '4rem',
+      '56': '5.6rem',
+      '60': '6rem',
+      '80': '8rem',
+      '100': '10rem',
+      '120': '12rem',
+      '160': '16rem',
+      '240': '24rem',
+      '280': '28rem',
+      '320': '32rem',
+      '480': '48rem',
+      '640': '64rem',
+      '1/2': '50%',
+      '1/3': '33.33333%',
+      '2/3': '66.66667%',
+      '1/4': '25%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.66667%',
+      '5/6': '83.33333%',
       'full': '100%',
+      'screen': '100vw'
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Maximum height                      https://tailwindcss.com/docs/max-height
@@ -621,13 +694,13 @@ let colors = {
     | Class name: .max-h-{size}
     |
     */
-  
+
     maxHeight: {
       'full': '100%',
       'screen': '100vh',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Padding                                https://tailwindcss.com/docs/padding
@@ -642,10 +715,12 @@ let colors = {
     | Class name: .p{side?}-{size}
     |
     */
-  
+
     padding: {
       'px': '1px',
       '0': '0',
+      '3': '0.3rem',
+      '4': '0.4rem',
       '6': '0.6rem',
       '8': '0.8rem',
       '12': '1.2rem',
@@ -656,8 +731,8 @@ let colors = {
       '28': '2.8rem',
       '32': '3.2rem',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Margin                                  https://tailwindcss.com/docs/margin
@@ -672,11 +747,13 @@ let colors = {
     | Class name: .m{side?}-{size}
     |
     */
-  
+
     margin: {
       'auto': 'auto',
       'px': '1px',
       '0': '0',
+      '3': '0.3rem',
+      '4':'0.4rem',
       '6': '0.6rem',
       '8': '0.8rem',
       '12': '1.2rem',
@@ -687,8 +764,8 @@ let colors = {
       '28': '2.8rem',
       '32': '3.2rem',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Negative margin                https://tailwindcss.com/docs/negative-margin
@@ -703,7 +780,7 @@ let colors = {
     | Class name: .-m{side?}-{size}
     |
     */
-  
+
     negativeMargin: {
       'px': '1px',
       '0': '0',
@@ -717,8 +794,8 @@ let colors = {
       '28': '2.8rem',
       '32': '3.2rem',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Shadows                                https://tailwindcss.com/docs/shadows
@@ -734,7 +811,7 @@ let colors = {
     | Class name: .shadow-{size?}
     |
     */
-  
+
     shadows: {
       default: '0 2px 4px 0 rgba(0,0,0,0.10)',
       'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
@@ -742,8 +819,8 @@ let colors = {
       'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
       'none': 'none',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Z-index                                https://tailwindcss.com/docs/z-index
@@ -756,7 +833,7 @@ let colors = {
     | Class name: .z-{index}
     |
     */
-  
+
     zIndex: {
       'auto': 'auto',
       '0': 0,
@@ -766,8 +843,8 @@ let colors = {
       '40': 40,
       '50': 50,
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Opacity                                https://tailwindcss.com/docs/opacity
@@ -780,7 +857,7 @@ let colors = {
     | Class name: .opacity-{name}
     |
     */
-  
+
     opacity: {
       '0': '0',
       '25': '.25',
@@ -788,8 +865,54 @@ let colors = {
       '75': '.75',
       '100': '1',
     },
-  
-  
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Position
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .{top/right/bottom/left}-{size}
+    |
+    */
+    position: {
+      auto: 'auto',
+      px: '1px',
+      '10': '1rem',
+      '12': '1.2rem',
+      '16': '1.6rem',
+      '18': '1.8rem',
+      '21': '2.1rem',
+      '24': '2.4rem',
+      '28': '2.8rem',
+      '32': '3.2rem',
+      '40': '4rem',
+      '56': '5.6rem',
+      '60': '6rem',
+      '80': '8rem',
+      '100': '10rem',
+      '120': '12rem',
+      '160': '16rem',
+      '240': '24rem',
+      '280': '28rem',
+      '320': '32rem',
+      '480': '48rem',
+      '640': '64rem',
+      '1-2': '50%',
+      '1/2': '50%',
+      '1/3': '33.33333%',
+      '2/3': '66.66667%',
+      '1/4': '25%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.66667%',
+      '5/6': '83.33333%',
+      'full': '100%',
+      'screen': '100vw'
+  },
+
     /*
     |-----------------------------------------------------------------------------
     | SVG fill                                   https://tailwindcss.com/docs/svg
@@ -803,12 +926,12 @@ let colors = {
     | Class name: .fill-{name}
     |
     */
-  
+
     svgFill: {
       'current': 'currentColor',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | SVG stroke                                 https://tailwindcss.com/docs/svg
@@ -822,12 +945,12 @@ let colors = {
     | Class name: .stroke-{name}
     |
     */
-  
+
     svgStroke: {
       'current': 'currentColor',
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Modules                  https://tailwindcss.com/docs/configuration#modules
@@ -846,7 +969,7 @@ let colors = {
     | To disable a module completely, use `false` instead of an array.
     |
     */
-  
+
     modules: {
       appearance: ['responsive'],
       backgroundAttachment: ['responsive'],
@@ -894,8 +1017,8 @@ let colors = {
       width: ['responsive'],
       zIndex: ['responsive'],
     },
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Plugins                                https://tailwindcss.com/docs/plugins
@@ -909,15 +1032,16 @@ let colors = {
     | the plugin system works.
     |
     */
-  
+
     plugins: [
       // require('tailwindcss/plugins/container')({
         // center: true,
         // padding: '1rem',
       // }),
+        require('./plugins/position')(),
     ],
-  
-  
+
+
     /*
     |-----------------------------------------------------------------------------
     | Advanced Options         https://tailwindcss.com/docs/configuration#options
@@ -927,11 +1051,11 @@ let colors = {
     | leaving these options alone unless you absolutely need to change them.
     |
     */
-  
+
     options: {
       prefix: '',
       important: false,
       separator: ':',
     },
-  
+
   }

@@ -1,0 +1,10 @@
+.dropdown {
+    @apply relative w-full h-full;
+}
+
+.dropdown-menu {
+    @apply absolute pin-r;
+    top: 100%;
+    background: color(dark);
+    border: 1px solid color(border);
+}

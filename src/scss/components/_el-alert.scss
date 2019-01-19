@@ -1,0 +1,15 @@
+.el-alert {
+    @apply border border-solid border-color-border;
+    @apply bg-black;
+    @apply px-18 py-12;
+
+    &-success {
+        @apply border-none;
+        @apply bg-green-dark;
+    }
+
+    &-danger {
+        @apply border-none;
+        @apply bg-red-dark;
+    }
+}

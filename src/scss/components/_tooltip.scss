@@ -1,0 +1,12 @@
+.tooltip {
+    @apply relative inline-block;
+}
+
+.tooltip-pane {
+    @apply absolute bg-black bottom-full left-1-2 border border-solid border-color-border px-12 py-8 z-50 text-xs block min-w-120 max-w-280;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+.tooltip-pane-arrow {
+    @include arrow($position: bottom);
+}

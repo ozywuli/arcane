@@ -1,0 +1,5 @@
+.alert-panel {
+    @apply z-50;
+    @apply fixed right-24 bottom-24;
+    @apply bg-black border border-solid border-color-border border-l border-color-link;
+}

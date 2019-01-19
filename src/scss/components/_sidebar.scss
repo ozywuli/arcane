@@ -1,19 +1,44 @@
 .sidebar {
-    @apply fixed pin-t pin-b;
+    @apply fixed pin-t pin-b z-10;
+    font-size: config('textSizes.base');
     background: color(dark);
     border-right: 1px solid color(border);
     width: $siteSidebarWidth;
 }
 
-.sidebar-container {
-
-}
-
-.sidebar-item {
-
-}
-
 .sidebar-link {
-    @apply block px-16 py-8;
+    @apply relative block flex px-16 py-8;
     color: color(light);
+
+    &:hover {
+        background: config('colors.color-base-highlight');
+        svg {
+            fill: color(link-hover);
+        }
+        circle {
+            stroke: color(link-hover);
+        }
+    }
+
+    &-active {
+        color: config('colors.color-link');
+        background: config('colors.color-base');
+        border-right: 1px solid config('colors.color-link');
+        margin-right: -1px;
+    }
+
+    svg {
+        @apply w-12 h-12 mr-8;
+        fill: color(copy);
+    }
+    circle {
+        stroke: color(copy);
+    }
 }
+
+// .sidebar-link-item {
+//     &:before {
+//         content: '—';
+//         @apply pr-8;
+//     }
+// }

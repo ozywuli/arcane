@@ -1,0 +1,18 @@
+.pill {
+    @apply flex;
+}
+
+.pill-btn {
+    @apply block bg-black;
+    @apply border border-solid border-color-border;
+    @apply px-12 py-8;
+    @apply text-xs uppercase text-color-copy;
+
+}
+
+.pill-x {
+    @apply flex items-center justify-center;
+    @apply bg-color-border;
+    @apply w-32 h-32;
+    @apply text-xxs;
+}

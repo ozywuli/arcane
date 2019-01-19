@@ -1,0 +1,53 @@
+@mixin arrow(
+    $backgroundColor: config('colors.black'),
+    $borderColor: config('colors.color-border'),
+    $borderWidth: 2px,
+    $arrowSize: 8px,
+    $position: 'top'
+) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &:before, &:after {
+        @if $position == 'top' {
+            bottom: 100%;
+        }
+        @if $position == 'bottom' {
+            top: 100%;
+        }
+
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        @if $position == 'top' {
+            border-bottom-color: $backgroundColor;
+        }
+        @if $position == 'bottom' {
+            border-top-color: $backgroundColor;
+        }
+
+        border-width: $arrowSize;
+        margin-left: -$arrowSize;
+    }
+
+    &:before {
+        @if $position == 'top' {
+            border-bottom-color: $borderColor;
+        }
+        @if $position == 'bottom' {
+            border-top-color: $borderColor;
+        }
+        border-width: #{$arrowSize + $borderWidth};
+        margin-left: -#{$arrowSize + $borderWidth};
+    }
+}

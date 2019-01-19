@@ -1,0 +1,10 @@
+.el-modal {
+    @apply bg-black-80;
+    @apply fixed pin-t pin-r pin-b pin-l;
+    @apply z-50;
+}
+
+.el-modal-container {
+    @apply w-full h-full;
+    @apply flex items-center justify-center;
+}

@@ -1,18 +1,18 @@
 html, body {
     background: color(base);
-    color: color(light);
+    color: config('colors.color-copy')
 }
 
 body {
     font-family: font(sans);
-    font-size: 1.4rem;
+    font-size: config('textSizes.sm');
 
     @include breakpoint(smTablet) {
-        font-size: 1.6rem;
+        font-size: config('textSizes.base');
     }
 
     @include breakpoint(tablet) {
-        font-size: 1.8rem;
+        font-size: config('textSizes.offbase');
     }
 
     @each $key, $value in $breakpoints {
@@ -20,9 +20,12 @@ body {
     }
 }
 
+svg {
+    display: block;
+}
+
 a {
     color: color(link);
-    transition: all transition(yi) ease;
 
     .no-touchevents &:hover {
         color: color(link-hover)
@@ -52,42 +55,8 @@ p, li {
 //==============================================================================
 // Input field
 //==============================================================================
-input {
-    padding: 12px;
-    line-height: 1;
-    font-size: 1.2rem;
-    display: inline-block;
-    height: 42px;
-}
-
-input[type="text"],
-input[type="email"], 
-input[type="password"],
-textarea
-{
-    background: color(dark);
-    border: 1px solid color(link);
-    color: color(light);
-    font-family: font(sans);
-    width: 100%;
-
-    @include breakpoint(tablet) {
-        width: 210px;
-    }
-}
-
-input[type="submit"],
-button
-{
-    background: color(link);
-    color: color(light);
-    text-transform: uppercase;
-    font-family: font(monospace);
-    transition: all transition(yi) ease;
-    .no-touchevents &:hover {
-        cursor: pointer;
-        background: color(link-hover);
-    }
+input:hover {
+    cursor: pointer;
 }
 
 input:-webkit-autofill {
@@ -106,8 +75,6 @@ select {
     color: color(light);
     padding: 6px 12px;
 }
-
-
 
 //==============================================================================
 // Webkit scrollbar styles
@@ -145,7 +112,7 @@ $scrollbarWidth: 10px;
 
 
 //==============================================================================
-// 
+//
 //==============================================================================
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     // vertical-align: center;

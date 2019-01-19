@@ -1,0 +1,39 @@
+.el-input-field {
+    padding: 0 12px;
+    line-height: 1;
+    font-size: 1.2rem;
+    display: inline-block;
+    height: 34px;
+
+    background: color(base);
+    border: 1px solid color(border);
+    color: color(light);
+    font-family: font(sans);
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border-color: color(link-hover);
+    }
+}
+
+.el-input-icon {
+    background: color(dark);
+    border-top: 1px solid color(border);
+    border-bottom: 1px solid color(border);
+    border-left: 1px solid color(border);
+
+    width: 40px;
+    height: 40px;
+
+    @apply flex items-center justify-center;
+
+    svg {
+        width: 14px;
+        height: 14px;
+
+        path {
+            fill: color(darker) !important;
+        }
+    }
+}
