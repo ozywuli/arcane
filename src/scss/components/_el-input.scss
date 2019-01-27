@@ -11,6 +11,10 @@
     font-family: font(sans);
     width: 100%;
 
+    &.is-invalid {
+        border: 1px solid config('colors.red');
+    }
+
     &:focus {
         outline: none;
         border-color: color(link-hover);

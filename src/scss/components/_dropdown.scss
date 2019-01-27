@@ -3,8 +3,5 @@
 }
 
 .dropdown-menu {
-    @apply absolute pin-r;
-    top: 100%;
-    background: color(dark);
-    border: 1px solid color(border);
+    @apply absolute pin-r top-full bg-black border border-solid border-color-border py-8 min-w-160;
 }

@@ -18,9 +18,9 @@
 }
 
 .spinner-icon {
-    width: 32px;
-    height: 32px;
-    border: 2px solid color(dark);
+    width: config('width.32');
+    height: config('width.32');
+    border: 2px solid config('colors.color-base-highlight');
     border-top: 2px solid color(link);
     border-radius: 50%;
     animation: spinner 720ms linear infinite;

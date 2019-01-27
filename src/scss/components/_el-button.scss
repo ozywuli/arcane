@@ -9,6 +9,11 @@
         cursor: pointer;
         background: color(border);
     }
+
+    .no-touchevents &:focus {
+        @apply border border-solid border-color-link;
+        outline: none;
+    }
 }
 
 .el-button-wrapper {

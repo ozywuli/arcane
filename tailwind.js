@@ -43,102 +43,112 @@ function rgba(r, g, b, alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
+let colorsBase = {
+
+  'transparent': 'transparent',
+
+  'color-border': '#1b1b1b',
+  'color-link': '#00ccff',
+  'color-copy': '#e8e8e8',
+  'color-base': '#080808',
+
+  'black-80': rgba(...Color.rgb('#000').array(), 0.8),
+
+  'black': '#000',
+  'grey-darkest': '#3d4852',
+  'grey-darker': '#606f7b',
+  'grey-dark': '#8795a1',
+  'grey': '#b8c2cc',
+  'grey-light': '#dae1e7',
+  'grey-lighter': '#f1f5f8',
+  'grey-lightest': '#f8fafc',
+  'white': '#ffffff',
+
+  'red-darkest': '#3b0d0c',
+  'red-darker': '#621b18',
+  'red-dark': '#cc1f1a',
+  'red': '#e3342f',
+  'red-light': '#ef5753',
+  'red-lighter': '#f9acaa',
+  'red-lightest': '#fcebea',
+
+  'orange-darkest': '#462a16',
+  'orange-darker': '#613b1f',
+  'orange-dark': '#de751f',
+  'orange': '#f6993f',
+  'orange-light': '#faad63',
+  'orange-lighter': '#fcd9b6',
+  'orange-lightest': '#fff5eb',
+
+  'yellow-darkest': '#453411',
+  'yellow-darker': '#684f1d',
+  'yellow-dark': '#f2d024',
+  'yellow': '#ffed4a',
+  'yellow-light': '#fff382',
+  'yellow-lighter': '#fff9c2',
+  'yellow-lightest': '#fcfbeb',
+
+  'green-darkest': '#0f2f21',
+  'green-darker': '#1a4731',
+  'green-dark': '#1f9d55',
+  'green': '#38c172',
+  'green-light': '#51d88a',
+  'green-lighter': '#a2f5bf',
+  'green-lightest': '#e3fcec',
+
+  'teal-darkest': '#0d3331',
+  'teal-darker': '#20504f',
+  'teal-dark': '#38a89d',
+  'teal': '#4dc0b5',
+  'teal-light': '#64d5ca',
+  'teal-lighter': '#a0f0ed',
+  'teal-lightest': '#e8fffe',
+
+  'blue-darkest': '#12283a',
+  'blue-darker': '#1c3d5a',
+  'blue-dark': '#2779bd',
+  'blue': '#3490dc',
+  'blue-light': '#6cb2eb',
+  'blue-lighter': '#bcdefa',
+  'blue-lightest': '#eff8ff',
+
+  'indigo-darkest': '#191e38',
+  'indigo-darker': '#2f365f',
+  'indigo-dark': '#5661b3',
+  'indigo': '#6574cd',
+  'indigo-light': '#7886d7',
+  'indigo-lighter': '#b2b7ff',
+  'indigo-lightest': '#e6e8ff',
+
+  'purple-darkest': '#21183c',
+  'purple-darker': '#382b5f',
+  'purple-dark': '#794acf',
+  'purple': '#9561e2',
+  'purple-light': '#a779e9',
+  'purple-lighter': '#d6bbfc',
+  'purple-lightest': '#f3ebff',
+
+  'pink-darkest': '#451225',
+  'pink-darker': '#6f213f',
+  'pink-dark': '#eb5286',
+  'pink': '#f66d9b',
+  'pink-light': '#fa7ea8',
+  'pink-lighter': '#ffbbca',
+  'pink-lightest': '#ffebef',
+}
+
+let colorsExtended = {
+  'color-link-hover': Color('#00ccff').darken(0.12).hex(),
+  'color-base-highlight': Color(colorsBase['color-base']).lighten(2.4).hex(),
+}
+
 let colors = {
+  ...colorsBase,
+  ...colorsExtended
+}
 
-    'transparent': 'transparent',
 
-    'color-border': '#1b1b1b',
-    'color-link': '#00ccff',
-    'color-copy': '#e8e8e8',
-    'color-base': '#0a0a0a',
-    'color-base-highlight': '#181818',
-
-    'black-80': rgba(...Color.rgb('#000').array(), 0.8),
-
-    'black': '#000',
-    'grey-darkest': '#3d4852',
-    'grey-darker': '#606f7b',
-    'grey-dark': '#8795a1',
-    'grey': '#b8c2cc',
-    'grey-light': '#dae1e7',
-    'grey-lighter': '#f1f5f8',
-    'grey-lightest': '#f8fafc',
-    'white': '#ffffff',
-
-    'red-darkest': '#3b0d0c',
-    'red-darker': '#621b18',
-    'red-dark': '#cc1f1a',
-    'red': '#e3342f',
-    'red-light': '#ef5753',
-    'red-lighter': '#f9acaa',
-    'red-lightest': '#fcebea',
-
-    'orange-darkest': '#462a16',
-    'orange-darker': '#613b1f',
-    'orange-dark': '#de751f',
-    'orange': '#f6993f',
-    'orange-light': '#faad63',
-    'orange-lighter': '#fcd9b6',
-    'orange-lightest': '#fff5eb',
-
-    'yellow-darkest': '#453411',
-    'yellow-darker': '#684f1d',
-    'yellow-dark': '#f2d024',
-    'yellow': '#ffed4a',
-    'yellow-light': '#fff382',
-    'yellow-lighter': '#fff9c2',
-    'yellow-lightest': '#fcfbeb',
-
-    'green-darkest': '#0f2f21',
-    'green-darker': '#1a4731',
-    'green-dark': '#1f9d55',
-    'green': '#38c172',
-    'green-light': '#51d88a',
-    'green-lighter': '#a2f5bf',
-    'green-lightest': '#e3fcec',
-
-    'teal-darkest': '#0d3331',
-    'teal-darker': '#20504f',
-    'teal-dark': '#38a89d',
-    'teal': '#4dc0b5',
-    'teal-light': '#64d5ca',
-    'teal-lighter': '#a0f0ed',
-    'teal-lightest': '#e8fffe',
-
-    'blue-darkest': '#12283a',
-    'blue-darker': '#1c3d5a',
-    'blue-dark': '#2779bd',
-    'blue': '#3490dc',
-    'blue-light': '#6cb2eb',
-    'blue-lighter': '#bcdefa',
-    'blue-lightest': '#eff8ff',
-
-    'indigo-darkest': '#191e38',
-    'indigo-darker': '#2f365f',
-    'indigo-dark': '#5661b3',
-    'indigo': '#6574cd',
-    'indigo-light': '#7886d7',
-    'indigo-lighter': '#b2b7ff',
-    'indigo-lightest': '#e6e8ff',
-
-    'purple-darkest': '#21183c',
-    'purple-darker': '#382b5f',
-    'purple-dark': '#794acf',
-    'purple': '#9561e2',
-    'purple-light': '#a779e9',
-    'purple-lighter': '#d6bbfc',
-    'purple-lightest': '#f3ebff',
-
-    'pink-darkest': '#451225',
-    'pink-darker': '#6f213f',
-    'pink-dark': '#eb5286',
-    'pink': '#f66d9b',
-    'pink-light': '#fa7ea8',
-    'pink-lighter': '#ffbbca',
-    'pink-lightest': '#ffebef',
-  }
-
-  module.exports = {
+module.exports = {
 
     /*
     |-----------------------------------------------------------------------------
@@ -665,6 +675,7 @@ let colors = {
       '320': '32rem',
       '480': '48rem',
       '640': '64rem',
+      '720': '72rem',
       '1/2': '50%',
       '1/3': '33.33333%',
       '2/3': '66.66667%',
@@ -730,6 +741,7 @@ let colors = {
       '24': '2.4rem',
       '28': '2.8rem',
       '32': '3.2rem',
+      '48': '4.8rem'
     },
 
 
@@ -763,6 +775,7 @@ let colors = {
       '24': '2.4rem',
       '28': '2.8rem',
       '32': '3.2rem',
+      '48': '4.8rem'
     },
 
 
@@ -868,6 +881,23 @@ let colors = {
 
     /*
     |-----------------------------------------------------------------------------
+    | Order
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .{order}-{integer}
+    |
+    */
+
+    order: {
+      default: 0,
+      '1': 1,
+      '2': 2,
+      '3': 3,
+      '4': 4,
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
     | Position
     |-----------------------------------------------------------------------------
     |
@@ -877,6 +907,7 @@ let colors = {
     position: {
       auto: 'auto',
       px: '1px',
+      '8': '0.8rem',
       '10': '1rem',
       '12': '1.2rem',
       '16': '1.6rem',
@@ -898,17 +929,16 @@ let colors = {
       '480': '48rem',
       '640': '64rem',
       '1-2': '50%',
-      '1/2': '50%',
-      '1/3': '33.33333%',
-      '2/3': '66.66667%',
-      '1/4': '25%',
-      '3/4': '75%',
-      '1/5': '20%',
-      '2/5': '40%',
-      '3/5': '60%',
-      '4/5': '80%',
-      '1/6': '16.66667%',
-      '5/6': '83.33333%',
+      '1-3': '33.33333%',
+      '2-3': '66.66667%',
+      '1-4': '25%',
+      '3-4': '75%',
+      '1-5': '20%',
+      '2-5': '40%',
+      '3-5': '60%',
+      '4-5': '80%',
+      '1-6': '16.66667%',
+      '5-6': '83.33333%',
       'full': '100%',
       'screen': '100vw'
   },
@@ -1034,10 +1064,7 @@ let colors = {
     */
 
     plugins: [
-      // require('tailwindcss/plugins/container')({
-        // center: true,
-        // padding: '1rem',
-      // }),
+        require('./plugins/order')(),
         require('./plugins/position')(),
     ],
 

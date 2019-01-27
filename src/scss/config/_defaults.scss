@@ -1,6 +1,6 @@
 html, body {
-    background: color(base);
-    color: config('colors.color-copy')
+    background: config('colors.black');
+    color: config('colors.color-copy');
 }
 
 body {
@@ -55,10 +55,6 @@ p, li {
 //==============================================================================
 // Input field
 //==============================================================================
-input:hover {
-    cursor: pointer;
-}
-
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px color(dark) inset;
     -webkit-text-fill-color: color(light) !important;
@@ -70,10 +66,6 @@ textarea {
 }
 
 select {
-    border: 1px solid color(border);
-    background: color(dark);
-    color: color(light);
-    padding: 6px 12px;
 }
 
 //==============================================================================

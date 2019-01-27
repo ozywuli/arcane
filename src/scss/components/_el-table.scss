@@ -1,0 +1,21 @@
+.el-table {
+    @apply border border-solid border-color-border;
+    @apply text-sm;
+    @apply w-full;
+}
+
+.table-body {
+}
+
+.table-row {
+    @apply border-b border-solid border-color-border;
+}
+
+.table-head {
+    @extend .table-row;
+    @apply font-bold uppercase;
+}
+
+.table-cell {
+    @apply px-16 py-12;
+}

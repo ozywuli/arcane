@@ -17,3 +17,10 @@
 .title {
     font-family: font(monospace);
 }
+
+.copy-danger {
+    @apply text-red;
+    .no-touchevents &:hover {
+        @apply text-red-dark;
+    }
+}
