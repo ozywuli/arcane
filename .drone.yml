@@ -1,0 +1,7 @@
+pipeline:
+  build:
+    image: node:10.15.0
+    commands: npm install
+  test:
+    image: node:10.15.0
+    commands: npm run test
