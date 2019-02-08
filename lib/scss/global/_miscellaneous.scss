@@ -1,3 +1,32 @@
 .youtube-embed {
     width: 100%
 }
+
+.bg-dummy {
+    @apply relative block bg-black w-full;
+    background-size: cover;
+    &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+.bg-dummy-child {
+    @apply absolute pin-t pin-r pin-b pin-l;
+}
+
+.bg-dummy-16x9 {
+    padding-bottom: 56.25%;
+    &:after {
+        content: '1600x900'
+    }
+}
+
+.bg-dummy-1200x630 {
+    padding-bottom: 52.5%;
+    &:after {
+        content: '1200x630'
+    }
+}

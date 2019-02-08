@@ -7,12 +7,12 @@
     @apply border border-solid border-color-border;
     @apply bg-transparent;
     @apply text-sm text-color-link leading-none;
-    @apply pl-12 pr-24 py-8;
+    @apply pl-12 pr-32 py-8;
 }
 
 .sc-select-arrow {
     @apply pointer-events-none;
-    @apply absolute top-1-2 right-12;
+    @apply absolute top-1-2 right-16;
     @apply text-xs;
     transform: translateY(-50%);
 }

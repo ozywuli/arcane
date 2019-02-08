@@ -11,4 +11,8 @@
     .no-touchevents &:hover {
         @apply border-color-link-hover bg-color-link-hover text-white;
     }
+
+    &--active {
+        @apply border-color-link-hover bg-color-link text-white;
+    }
 }
