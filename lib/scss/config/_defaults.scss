@@ -68,6 +68,12 @@ textarea {
 select {
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    &:hover {
+        @apply bg-color-link-hover;
+    }
+}
+
 //==============================================================================
 // Webkit scrollbar styles
 //==============================================================================

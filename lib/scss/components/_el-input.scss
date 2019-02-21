@@ -1,4 +1,5 @@
 .el-input-field {
+    @apply relative;
     padding: 0 12px;
     line-height: 1;
     font-size: 1.2rem;
@@ -39,5 +40,32 @@
         path {
             fill: color(darker) !important;
         }
+    }
+}
+
+.s-input-dropdown {
+    @apply absolute pin-r pin-l top-full;
+    @apply bg-black border-r border-b border-l border-solid border-color-border;
+    @apply text-sm text-color-copy;
+    @apply pt-12 pb-24;
+    @apply overflow-y-auto;
+    max-height: 200px;
+}
+
+.s-input-dropdown-item {
+    @apply relative;
+    @apply block;
+    @apply px-12 py-8;
+
+    transform: translate3d(0, 0, 0);
+
+    @media (hover: hover) {
+        &:hover {
+            @apply bg-color-border;
+        }
+    }
+
+    &--active {
+        @apply bg-color-border;
     }
 }

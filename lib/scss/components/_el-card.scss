@@ -1,12 +1,12 @@
 .el-card {
-    @apply block border border-solid border-color-border;
+    @apply inline-block border border-solid border-color-border;
     @apply w-full;
     @apply bg-color-base;
     @apply text-color-copy;
 }
 
 .el-card-header, .el-card-body {
-    @apply p-16;
+    @apply p-18;
 }
 
 .el-card-header {

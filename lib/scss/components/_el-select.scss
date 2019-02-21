@@ -11,8 +11,18 @@
 }
 
 .sc-select-arrow {
+    @apply text-xs;
     @apply pointer-events-none;
     @apply absolute top-1-2 right-16;
-    @apply text-xs;
+    transform: translateY(-50%);
+}
+
+.sc-selectize {
+    @apply relative;
+}
+
+.sc-selectize-arrow {
+    @apply text-color-link;
+    @apply absolute top-1-2 right-16;
     transform: translateY(-50%);
 }
