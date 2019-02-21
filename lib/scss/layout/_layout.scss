@@ -9,15 +9,6 @@
 .content {
     position: relative;
     flex: 1 0 auto;
-    padding-top: #{map-get($siteNavBar, mobile)};
-
-    @include breakpoint(tablet) {
-        padding-top: #{map-get($siteNavBar, desktop)};
-    }
-
-    &-sidebar-offset {
-        margin-left: $siteSidebarWidth;
-    }
 }
 
 .col {

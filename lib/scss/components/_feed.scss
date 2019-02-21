@@ -1,0 +1,11 @@
+.feed {
+
+}
+
+.feed-item {
+    @apply border-b border-solid border-color-border;
+}
+
+.feed-item-img {
+    @apply w-160 h-90;
+}
