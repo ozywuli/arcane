@@ -8,10 +8,12 @@
     color: color(copy);
     font-size: 1.2rem;
 
-    .no-touchevents &:hover {
-        border: 1px solid color(link-hover);
-        background: color(link-hover);
-        color: color(light);
+    @media (hover: hover) {
+        &:hover {
+            border: 1px solid color(link-hover);
+            background: color(link-hover);
+            color: color(light);
+        }
     }
 
     &.mod-lg {

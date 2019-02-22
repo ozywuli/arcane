@@ -35,8 +35,10 @@
         background: rgba(0, 0, 0, 0.24);
         transition: all transition(yi) ease;
 
-        .no-touchevents .grid-link:hover & {
-            opacity: 1;
+        @media (hover: hover) {
+            .grid-link:hover & {
+                opacity: 1;
+            }
         }
     }
 }
@@ -73,8 +75,10 @@
 
     color: color(light);
 
-    .no-touchevents &:hover {
-        color: color(light);
+    @media (hover: hover) {
+        &:hover {
+            color: color(light);
+        }
     }
 }
 

@@ -1,11 +1,24 @@
 .feed {
-
+    @apply text-sm;
 }
 
 .feed-item {
+    @apply flex items-start;
     @apply border-b border-solid border-color-border;
+    @apply p-8;
 }
 
 .feed-item-img {
-    @apply w-160 h-90;
+    @apply w-120 h-60;
+    @apply bg-color-border;
+    @apply mr-8;
+}
+
+.feed-item-content {
+
+}
+
+.feed-item-title {
+    @apply block;
+    @apply mb-8;
 }

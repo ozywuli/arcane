@@ -8,8 +8,10 @@
     @apply border border-solid border-color-border;
     @apply w-32 h-32 ml-8;
 
-    .no-touchevents &:hover {
-        @apply border-color-link-hover bg-color-link-hover text-white;
+    @media (hover: hover) {
+        &:hover {
+            @apply border-color-link-hover bg-color-link-hover text-white;
+        }
     }
 
     &--active {

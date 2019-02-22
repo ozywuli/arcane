@@ -27,8 +27,10 @@ svg {
 a {
     color: color(link);
 
-    .no-touchevents &:hover {
-        color: color(link-hover)
+    @media (hover: hover) {
+        &:hover {
+            color: color(link-hover)
+        }
     }
 }
 
