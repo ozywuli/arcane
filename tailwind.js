@@ -51,6 +51,7 @@ let colorsBase = {
   'color-link': '#00ccff',
   'color-copy': '#e8e8e8',
   'color-base': '#080808',
+  'color-success': '#38c172',
 
   'black-80': rgba(...Color.rgb('#000').array(), 0.8),
 
@@ -740,6 +741,7 @@ module.exports = {
       '4': '0.4rem',
       '6': '0.6rem',
       '8': '0.8rem',
+      '10': '1rem',
       '12': '1.2rem',
       '16': '1.6rem',
       '18': '1.8rem',
@@ -1054,6 +1056,12 @@ module.exports = {
       whitespace: ['responsive'],
       width: ['responsive'],
       zIndex: ['responsive'],
+    },
+
+    transitions: {
+      yi: '150ms',
+      er: '250ms',
+      san: '350ms'
     },
 
 

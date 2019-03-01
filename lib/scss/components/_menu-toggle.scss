@@ -1,0 +1,12 @@
+.menu-toggle {
+    @apply relative inline-block;
+    @apply p-10;
+
+    @media (hover: hover) {
+        &:hover {
+            .trigram-bar-inner, .x-bar {
+                @apply bg-color-link-hover;
+            }
+        }
+    }
+}

@@ -20,8 +20,38 @@
     @apply absolute;
 }
 
+//
 .navbar-block {
     svg {
         fill: color(copy);
+    }
+}
+
+//
+.navbar-list-link {
+    @apply block p-8;
+    svg {
+        @apply block w-16 h-16;
+    }
+
+    path, polygon {
+        transition: all config('transitions.yi') ease;
+        fill: config('colors.white') !important;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            path, polygon {
+                fill: config('colors.color-link-hover') !important;
+            }
+        }
+    }
+}
+
+.navbar-links {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: block;
     }
 }
