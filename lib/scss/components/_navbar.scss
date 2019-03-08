@@ -1,34 +1,72 @@
-.navbar {
+.s-navbar {
     @apply flex items-center justify-between;
     @apply fixed pin-t pin-r pin-l;
     @apply z-40;
-    border-bottom: 1px solid color(border);
-    height: siteNavbar('mobile');
-    background: color(dark);
+    @apply border-b border-solid border-color-border;
+    @apply bg-black;
+    height: config('navbar.mobile');
     @include breakpoint('desktop') {
-        height: siteNavbar('desktop');
+        height: config('navbar.desktop');
     }
 }
 
-/* Title */
-.navbar-title {
-    font-size: 1.8rem;
+//==============================================================================
+// Title
+//==============================================================================
+.s-navbar-title {
+    @apply text-offbase;
 }
 
-/* Dropdown */
-.navbar-dropdown {
+.s-navbar-title-link {
+    @apply inline-block;
+    @apply uppercase font-mono text-white;
+
+    &.mod-menu {
+        margin-right: 16px;
+        letter-spacing: -1px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: config('colors.color-link-hover');
+
+            path {
+                fill: config('colors.color-link-hover');
+            }
+        }
+    }
+}
+
+//==============================================================================
+// Dropdown
+//==============================================================================
+.s-navbar-dropdown {
     @apply absolute;
 }
 
-//
-.navbar-block {
+//==============================================================================
+// Block
+//==============================================================================
+.s-navbar-block {
+    @apply flex items-center;
     svg {
         fill: color(copy);
     }
+
+    // Fixes right-side alignment
+    &.mod-right {
+        margin-right: -10px;
+    }
 }
 
-//
-.navbar-list-link {
+//==============================================================================
+// List
+//==============================================================================
+.s-navbar-list {
+    @apply flex items-center;
+}
+
+.s-navbar-list-link {
     @apply block p-8;
     svg {
         @apply block w-16 h-16;
@@ -48,10 +86,78 @@
     }
 }
 
-.navbar-links {
+//==============================================================================
+// Links
+//==============================================================================
+.s-navbar-links {
+    @apply text-sm;
     display: none;
 
     @include breakpoint(tablet) {
         display: block;
+    }
+}
+
+//==============================================================================
+// Social
+//==============================================================================
+.s-navbar-social {
+    @apply relative;
+    display: none;
+    padding-right: 12px;
+    margin-right: 8px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: color(copy);
+    }
+
+    @include breakpoint(mdMobile) {
+        display: block;
+    }
+}
+
+.s-navbar-social-toggle {
+    @apply block p-10;
+
+    svg {
+        @apply block w-18 h-18;
+    }
+    path {
+        fill: color(light);
+    }
+}
+
+
+//==============================================================================
+// Search
+//==============================================================================
+.s-navbar-search {
+    padding: 8px 10px;
+    svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        path {
+            fill: config('colors.white');
+            transition: all config('transitions.yi') ease;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            svg {
+                path {
+                    fill: config('colors.color-link-hover');
+                }
+            }
+        }
     }
 }

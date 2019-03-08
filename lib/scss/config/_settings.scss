@@ -1,6 +1,17 @@
-@import '../mixins/_mixins';
+@import '../mixins/index';
 @import '_typography';
 @import '_colors';
 @import '_media-queries';
 @import '_z-index';
 @import '_miscellaneous';
+
+.offset-navbar {
+    padding-top: siteNavbar('mobile');
+    @include breakpoint('desktop') {
+        padding-top: siteNavbar('desktop');
+    }
+}
+
+.offset-sidebar {
+    padding-left: $siteSidebarWidth;
+}

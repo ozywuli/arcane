@@ -20,14 +20,3 @@
 //==============================================================================
 @import 'global/_components';
 @import 'global/_miscellaneous';
-
-.offset-navbar {
-    padding-top: siteNavbar('mobile');
-    @include breakpoint('desktop') {
-        padding-top: siteNavbar('desktop');
-    }
-}
-
-.offset-sidebar {
-    padding-left: $siteSidebarWidth;
-}

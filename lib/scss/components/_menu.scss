@@ -1,0 +1,121 @@
+.s-menu {
+    @apply fixed pin-t pin-r pin-b;
+    @apply bg-black;
+    @apply font-mono;
+    @apply z-10;
+    border-left: 1px solid config('colors.color-border');
+    border-right: 1px solid config('colors.color-border');
+    padding-top: config('navbar.desktop');
+    max-width: 300px;
+    min-width: 264px;
+    transition: all config('transitions.san') cubic-bezier(0.6,0,0.2,1);;
+    transform: translate3d(100%, 0, 0);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    font-family: font(monospace);
+
+    &.is-visible {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+//==============================================================================
+// Google Search Input
+//==============================================================================
+.s-menu {
+    .gsc-input {
+        padding-right: 0 !important;
+    }
+
+    .gsc-search-box-tools .gsc-search-box input {
+        padding-left: 32px !important;
+    }
+
+    .gsc-search-button {
+        display: none !important;
+    }
+
+    table.gsc-search-box, form.gsc-search-box {
+        margin-bottom: 0 !important;
+    }
+}
+
+.s-menu-section {
+    @apply mb-24;
+}
+
+.s-menu-section-title {
+    @apply text-offbase;
+    @apply mb-24;
+    @apply capitalize;
+}
+
+.s-menu-list-link {
+    display: inline-block;
+    color: config('colors.white');
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+
+    @media (hover: hover) {
+        &:hover {
+            color: config('colors.color-link-hover');
+            path {
+                fill: config('colors.color-link-hover');
+            }
+        }
+    }
+
+}
+
+.s-menu-container {
+    position: relative;
+    padding: 16px;
+
+    @include breakpoint(tablet) {
+        padding: 24px;
+    }
+}
+
+.s-menu-wrapper {
+    position: relative;
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+//==============================================================================
+// Social
+//==============================================================================
+.s-menu-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    max-width: 200px;
+}
+
+
+//==============================================================================
+// Search
+//==============================================================================
+.s-menu-search {
+    position: relative;
+    margin-bottom: 24px;
+
+    svg {
+        pointer-events: none;
+        position: absolute;
+        display: block;
+        width: 18px;
+        height: 18px;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+    }
+    path {
+        fill: color(border);
+    }
+}

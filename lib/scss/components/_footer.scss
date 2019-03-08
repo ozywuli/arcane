@@ -1,8 +1,42 @@
-.footer {
-    @apply relative border-t border-solid border-color-border;
-    background: config('colors.black');
+.s-footer {
+    @apply relative;
+    @apply bg-color-base;
 }
 
-.footer-row {
-    @apply p-16 flex justify-between text-xs font-mono uppercase;
+.s-footer-row {
+    @apply relative;
+    @apply px-24 py-16;
+    @apply bg-black;
+    @apply text-xs font-mono uppercase;
+    @apply flex justify-between;
+    @apply z-10;
+
+    @include breakpoint(tablet) {
+        padding: config('padding.24');
+    }
+}
+
+.s-footer-links {
+    @apply flex items-center;
+    @include breakpoint(smTablet, down) {
+        width: 50%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.s-footer-link {
+    letter-spacing: -1px;
+
+    @include breakpoint(smTablet, down) {
+        margin-bottom: 12px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(smTablet) {
+        margin-left: 16px;
+    }
 }

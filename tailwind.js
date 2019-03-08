@@ -187,10 +187,17 @@ module.exports = {
     */
 
     screens: {
-      'sm': '576px',
-      'md': '768px',
-      'lg': '992px',
-      'xl': '1200px',
+      'mobile': '0px',
+      'mobile_md': '350px',
+      'mobile_lg': '400px',
+      'sm': '540px',
+      'md': '760px',
+      'lg': '1023px',
+      'xl': '1240px',
+      'wide': '1440px',
+      'wide_md': '1700px',
+      'wide_lg': '1920px',
+      'ultra': '2160px'
     },
 
 
@@ -214,11 +221,11 @@ module.exports = {
 
     fonts: {
       'sans': [
+        'Roboto',
         'system-ui',
         'BlinkMacSystemFont',
         '-apple-system',
         'Segoe UI',
-        'Roboto',
         'Oxygen',
         'Ubuntu',
         'Cantarell',
@@ -240,7 +247,7 @@ module.exports = {
         'serif',
       ],
       'mono': [
-        'Roboto Mono',
+        '"Roboto Mono"',
         'monospace',
       ]
     },
@@ -1062,6 +1069,15 @@ module.exports = {
       yi: '150ms',
       er: '250ms',
       san: '350ms'
+    },
+
+    navbar: {
+      desktop: '54px',
+      mobile: '46px',
+    },
+
+    menu: {
+      width: '212px'
     },
 
 

@@ -1,0 +1,14 @@
+.embellished-title {
+    @include embellished-title();
+    @include in-page-title();
+
+    padding-left: 18px;
+
+    @include breakpoint(tablet) {
+        padding-left: 32px;
+    }
+
+    @include breakpoint(desktop) {
+        padding-left: 48px;
+    }
+}

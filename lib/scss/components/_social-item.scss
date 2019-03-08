@@ -1,0 +1,46 @@
+.social-item {
+    margin-bottom: 1.2rem;
+    margin-right: 1.2rem;
+
+    &.mod-site-menu {
+        margin-right: 0;
+        margin-left: 1.2rem;
+    }
+}
+
+.social-item-link {
+    text-transform: uppercase;
+    color: color(light);
+    display: block;
+    padding: 1rem;
+    border: 1px solid #383838;
+    border-radius: 50%;
+    transition: all transition(yi) ease;
+
+    @include breakpoint(tablet) {
+        padding: 1.2rem;
+    }
+
+    svg {
+        display: block;
+        width: 1.4rem;
+        height: 1.4rem;
+
+        @include breakpoint(tablet) {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        path, polygon, {
+            fill: color(light) !important;
+            transition: all transition(yi) ease;
+        }
+    }
+
+    .no-touchevents &:hover {
+        border: 1px solid color(link-hover);
+        path, polygon, rect {
+            fill: color(link-hover) !important;
+        }
+    }
+}

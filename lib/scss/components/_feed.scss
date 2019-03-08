@@ -2,10 +2,14 @@
     @apply text-sm;
 }
 
+.feed-container {
+    @apply border border-solid border-color-border;
+}
+
 .feed-item {
     @apply flex items-start;
     @apply border-b border-solid border-color-border;
-    @apply p-8;
+    @apply p-12;
 }
 
 .feed-item-img {

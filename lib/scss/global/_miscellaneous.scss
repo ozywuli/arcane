@@ -42,3 +42,52 @@
         content: '1200x630'
     }
 }
+
+.digital-ocean-logo {
+    svg {
+        width: 100px;
+    }
+}
+
+//==============================================================================
+// Mailchimp
+//==============================================================================
+.mailchimp {
+    input {
+        padding: 12px;
+        line-height: 1;
+        font-size: 1.2rem;
+        display: inline-block;
+        height: 42px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea
+    {
+        background: color(dark);
+        border: 1px solid color(link);
+        color: color(light);
+        font-family: font(sans);
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 210px;
+        }
+    }
+
+    input[type="submit"],
+    button
+    {
+        background: color(link);
+        color: color(light);
+        text-transform: uppercase;
+        font-family: font(monospace);
+        transition: all transition(yi) ease;
+        .no-touchevents &:hover {
+            cursor: pointer;
+            background: color(link-hover);
+        }
+    }
+}
