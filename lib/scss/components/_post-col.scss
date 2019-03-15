@@ -1,0 +1,116 @@
+.post-col {
+    ul, li {
+        list-style: square;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+}
+
+//==============================================================================
+// Post Column container
+//==============================================================================
+.post-col-container {
+    margin-bottom: 36px;
+
+    @include breakpoint(tablet) {
+        margin-bottom: 48px;
+    }
+}
+
+//==============================================================================
+// Post Column wrapper
+//==============================================================================
+.post-col-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 776px;
+    padding: 16px;
+
+    @include breakpoint(tablet) {
+        padding: 24px;
+    }
+}
+
+//==============================================================================
+// Post Column header
+//==============================================================================
+.post-col-header {
+    background: color(dark);
+}
+
+.post-col-title {
+    font-size: 3.2rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+
+    @include breakpoint(tablet) {
+        font-size: 4.2rem;
+    }
+}
+
+.post-col-excerpt {
+    margin-bottom: 24px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.post-col-meta {
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+}
+
+.post-col-share {
+    font-size: 0;
+}
+
+.post-col-meta__divider {
+    display: inline-block;
+    height: 100%;
+    margin: 0 6px;
+    color: color(light);
+    &:before {
+        content: '|';
+    }
+}
+
+//==============================================================================
+// Post Column featured
+//==============================================================================
+.post-col-featured {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.post-col-featured-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+}
+
+.post-col-featured-img-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.post-col-featured-caption {
+    @include caption();
+}
+
+//==============================================================================
+// Post Column content
+//==============================================================================
+.post-col-content {
+    margin-bottom: 24px;
+
+    h3 {
+        @include in-page-subtitle;
+    }
+
+    h4 {
+        margin-bottom: 18px;
+    }
+}

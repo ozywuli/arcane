@@ -2,7 +2,7 @@
     font-family: font(monospace);
     border: 1px solid color(border);
     text-transform: uppercase;
-    transition: all transition(yi) ease;
+    transition: all config('transitions.yi') ease;
     padding: 12px 16px;
     display: inline-block;
     color: color(copy);

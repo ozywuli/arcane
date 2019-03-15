@@ -15,7 +15,7 @@
     padding: 1rem;
     border: 1px solid #383838;
     border-radius: 50%;
-    transition: all transition(yi) ease;
+    transition: all config('transitions.yi') ease;
 
     @include breakpoint(tablet) {
         padding: 1.2rem;
@@ -33,7 +33,7 @@
 
         path, polygon, {
             fill: color(light) !important;
-            transition: all transition(yi) ease;
+            transition: all config('transitions.yi') ease;
         }
     }
 

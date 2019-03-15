@@ -9,6 +9,7 @@
 .content {
     position: relative;
     flex: 1 0 auto;
+    @apply bg-color-base;
 }
 
 .col {
