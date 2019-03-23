@@ -1,15 +1,15 @@
-.el-card {
+.s-card {
     @apply inline-block border border-solid border-color-border;
     @apply w-full;
     @apply bg-color-base;
     @apply text-color-copy;
 }
 
-.el-card-header, .el-card-body {
+.s-card-header, .s-card-body {
     @apply p-18;
 }
 
-.el-card-header {
+.s-card-header {
     @apply border-b border-solid border-color-border;
     @apply uppercase;
 }

@@ -1,0 +1,9 @@
+.social-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &.mod-site-menu {
+        justify-content: flex-end;
+    }
+}

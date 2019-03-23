@@ -1,27 +1,27 @@
-.sc-select {
+.s-select {
     @apply relative flex items-center;
     @apply text-color-link;
 }
 
-.sc-select-el {
+.s-select-el {
     @apply border border-solid border-color-border;
     @apply bg-transparent;
     @apply text-sm text-color-link leading-none;
     @apply pl-12 pr-32 py-8;
 }
 
-.sc-select-arrow {
+.s-select-arrow {
     @apply text-xs;
     @apply pointer-events-none;
     @apply absolute top-1-2 right-16;
     transform: translateY(-50%);
 }
 
-.sc-selectize {
+.s-selectize {
     @apply relative;
 }
 
-.sc-selectize-arrow {
+.s-selectize-arrow {
     @apply text-color-link;
     @apply absolute top-1-2 right-16;
     transform: translateY(-50%);

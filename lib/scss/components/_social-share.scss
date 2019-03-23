@@ -1,0 +1,32 @@
+.social-share {
+    @apply flex;
+}
+
+.social-share__link {
+    @apply inline-block;
+    @apply border border-solid rounded-full border-grey-darkest;
+    @apply p-10;
+    @apply mr-12;
+    transition: all config('transitions.yi') ease;
+
+    svg {
+        @apply block;
+        @apply w-12 h-12;
+
+        path {
+            fill: config('colors.white') !important;
+            transition: all config('transitions.yi') ease;
+        }
+    }
+
+    @media (hover:hover) {
+        &:hover {
+            svg {
+                path {
+                    fill: config('colors.color-link-hover') !important;
+                }
+            }
+            @apply border border-solid border-color-link-hover;
+        }
+    }
+}

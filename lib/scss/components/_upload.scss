@@ -1,7 +1,7 @@
-.el-upload {
+.s-upload {
     @apply relative inline-block;
 }
 
-.el-upload-input {
+.s-upload-input {
     @apply absolute pin-t pin-r opacity-0 w-full h-full;
 }

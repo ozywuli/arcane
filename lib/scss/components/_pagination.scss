@@ -9,10 +9,15 @@
     @apply w-32 h-32 ml-8;
     @include link();
 
+    @media (hover: hover) {
+        &:hover {
+            @apply border-color-link-hover bg-color-link-hover text-white;
+        }
+    }
+
     &--inactive {
         @media (hover: hover) {
             &:hover {
-
             }
         }
     }

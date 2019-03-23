@@ -1,0 +1,21 @@
+.toc {
+    @apply fixed pin-t pin-l pin-b;
+    @apply bg-black;
+    @apply border-r border-solid border-color-border;
+    @apply text-base;
+    @extend .offset-navbar;
+    width: $siteSidebarWidth;
+}
+
+.toc-container {
+    @apply py-12;
+}
+
+.toc-list-title {
+    @apply px-24 py-8;
+}
+
+.toc-list-item-link {
+    @apply block;
+    @apply px-24 py-8;
+}

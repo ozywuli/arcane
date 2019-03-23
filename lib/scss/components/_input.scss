@@ -1,8 +1,8 @@
-.el-input-field {
+.s-input-field {
     @apply relative;
+    @apply text-sm;
     padding: 0 12px;
     line-height: 1;
-    font-size: 1.2rem;
     display: inline-block;
     height: 34px;
 
@@ -22,7 +22,7 @@
     }
 }
 
-.el-input-icon {
+.s-input-icon {
     background: color(dark);
     border-top: 1px solid color(border);
     border-bottom: 1px solid color(border);

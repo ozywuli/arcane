@@ -51,6 +51,7 @@ let colorsBase = {
   'color-link': '#00ccff',
   'color-copy': '#e8e8e8',
   'color-base': '#080808',
+  'color-success': '#38c172',
 
   'black-80': rgba(...Color.rgb('#000').array(), 0.8),
 
@@ -186,10 +187,17 @@ module.exports = {
     */
 
     screens: {
-      'sm': '576px',
-      'md': '768px',
-      'lg': '992px',
-      'xl': '1200px',
+      'mobile': '0px',
+      'mobile_md': '350px',
+      'mobile_lg': '400px',
+      'sm': '540px',
+      'md': '760px',
+      'lg': '1023px',
+      'xl': '1240px',
+      'wide': '1440px',
+      'wide_md': '1700px',
+      'wide_lg': '1920px',
+      'ultra': '2160px'
     },
 
 
@@ -213,11 +221,11 @@ module.exports = {
 
     fonts: {
       'sans': [
+        'Roboto',
         'system-ui',
         'BlinkMacSystemFont',
         '-apple-system',
         'Segoe UI',
-        'Roboto',
         'Oxygen',
         'Ubuntu',
         'Cantarell',
@@ -239,7 +247,7 @@ module.exports = {
         'serif',
       ],
       'mono': [
-        'Roboto Mono',
+        '"Roboto Mono"',
         'monospace',
       ]
     },
@@ -506,6 +514,7 @@ module.exports = {
       '160': '16rem',
       '240': '24rem',
       '280': '28rem',
+      '300': '30rem',
       '320': '32rem',
       '480': '48rem',
       '640': '64rem',
@@ -740,6 +749,7 @@ module.exports = {
       '4': '0.4rem',
       '6': '0.6rem',
       '8': '0.8rem',
+      '10': '1rem',
       '12': '1.2rem',
       '16': '1.6rem',
       '18': '1.8rem',
@@ -1054,6 +1064,21 @@ module.exports = {
       whitespace: ['responsive'],
       width: ['responsive'],
       zIndex: ['responsive'],
+    },
+
+    transitions: {
+      yi: '150ms',
+      er: '250ms',
+      san: '350ms'
+    },
+
+    navbar: {
+      desktop: '54px',
+      mobile: '46px',
+    },
+
+    menu: {
+      width: '212px'
     },
 
 

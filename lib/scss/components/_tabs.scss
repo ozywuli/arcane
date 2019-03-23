@@ -1,15 +1,15 @@
-.el-tabs-panes {
+.s-tabs-panes {
     @apply flex items-center border-b border-solid border-color-border text-base;
 }
 
-.el-tab-pane {
+.s-tab-pane {
     @apply block px-16 py-12 text-color-copy;
 }
 
-.el-tab-active {
+.s-tab-active {
     @apply border-b border-solid border-color-link -mb-px text-color-link;
 }
 
-.el-tabs-content {
+.s-tabs-content {
     @apply py-16;
 }

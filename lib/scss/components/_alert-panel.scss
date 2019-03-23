@@ -1,5 +1,10 @@
 .alert-panel {
     @apply z-50;
+    @apply px-12 py-18;
     @apply fixed right-24 bottom-24;
-    @apply bg-black border border-solid border-color-border border-l border-color-link;
+    @apply bg-black;
+    border: 1px solid config('colors.color-border');
+    border-left: 4px solid config('colors.color-success');
+    @apply text-base;
+    @apply min-w-280;
 }

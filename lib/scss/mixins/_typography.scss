@@ -1,0 +1,96 @@
+@mixin embellished-title(
+    $triangleTopPos: -4px,
+    $triangleBottomPos: -6px,
+    $dotBottomPos: 0
+) {
+    @apply relative inline-block;
+    line-height: 0.8;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: $triangleTopPos;
+        bottom: $triangleBottomPos;
+        left: 0;
+        display: block;
+        width: 0;
+        background: transparent;
+
+        border-top: 4px solid transparent;
+        border-left: 4px solid #FFF;
+        border-bottom: 4px solid transparent;
+
+        @include breakpoint(tablet) {
+            border-top: 6px solid transparent;
+            border-left: 6px solid #FFF;
+            border-bottom: 6px solid transparent;
+        }
+        @include breakpoint(desktop) {
+            border-top: 8px solid transparent;
+            border-left: 8px solid #FFF;
+            border-bottom: 8px solid transparent;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: -12px;
+        bottom: $dotBottomPos;
+        width: 4px;
+        height: 4px;
+        border: 2px solid config('colors.white');
+        border-radius: 50%;
+        background: transparent;
+    }
+}
+
+@mixin in-page-title {
+    font-size: 3.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include breakpoint(lgMobile) {
+        font-size: 4.2rem;
+    }
+
+    @include breakpoint(smTablet) {
+        font-size: 4.8rem;
+    }
+
+    @include breakpoint(tablet) {
+        font-size: 6rem;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: 7.2rem;
+    }
+}
+
+@mixin in-page-subtitle {
+    margin: 16px 0;
+    font-size: 1.8rem;
+    line-height: 1.4;
+
+    @include breakpoint(tablet) {
+        margin: 24px 0;
+        font-size: 2.4rem;
+    }
+}
+
+@mixin in-page-block-title {
+    margin: 16px 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+
+    @include breakpoint(tablet) {
+        font-size: 1.8rem;
+    }
+}
+
+@mixin caption {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}

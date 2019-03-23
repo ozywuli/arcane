@@ -1,0 +1,33 @@
+.s-button {
+    @apply text-center text-white px-16 py-8 text-xs;
+    border: 1px solid color(border);
+    font-family: font(monospace);
+    text-transform: uppercase;
+    background: transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background: color(border);
+        }
+        &:focus {
+            @apply border border-solid border-color-link;
+            outline: none;
+        }
+    }
+}
+
+.s-button-wrapper {
+    @apply w-full h-full flex items-center;
+}
+
+.s-button-blue {
+    background: color(link);
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background: color(link-hover);
+        }
+    }
+}

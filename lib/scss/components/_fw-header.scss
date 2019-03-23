@@ -1,0 +1,9 @@
+.fw-header {
+    @apply relative;
+    @apply py-24 px-16;
+    @apply bg-center bg-cover;
+
+    @include breakpoint('tablet') {
+        @apply py-48 px-24;
+    }
+}
