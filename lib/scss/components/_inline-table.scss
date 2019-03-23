@@ -1,0 +1,46 @@
+.inline-table {
+    @apply min-w-full;
+    @apply text-left;
+}
+
+.inline-table-el {
+
+}
+
+.inline-table-row {
+    &.is-highlighted {
+        @apply font-bold bg-black;
+    }
+}
+
+.inline-table-cell {
+    @apply border border-solid border-color-border;
+    @apply py-12 px-24;
+    @apply align-middle;
+    @apply text-sm leading-normal;
+
+    &.mod-head {
+        @apply w-auto;
+        @apply whitespace-no-wrap;
+        @apply font-bold font-mono uppercase
+    }
+
+    &.mod-data {
+        &:last-of-type {
+            width: 99%;
+        }
+    }
+}
+
+.inline-table-wrapper {
+    @include smoothscroll();
+    max-height: 480px;
+}
+
+.inline-table-title {
+    @include in-page-block-title;
+}
+
+.inline-table-source {
+    @apply italic text-xs;
+}

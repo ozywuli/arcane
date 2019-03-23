@@ -2,7 +2,7 @@
 // Copy
 //==============================================================================
 @mixin titleDecor(
-    $triangleTopPos: -4px, 
+    $triangleTopPos: -4px,
     $triangleBottomPos: -6px,
     $dotBottomPos: 0
 ) {
@@ -169,4 +169,25 @@
         bottom: auto;
         left: 8px;
     }
+}
+
+//==============================================================================
+// Link
+//==============================================================================
+@mixin link {
+    color: config('colors.color-link');
+
+    @media (hover: hover) {
+        &:hover {
+            color: config('colors.color-link-hover');
+        }
+    }
+}
+
+//==============================================================================
+// Smooth scroll
+//==============================================================================
+@mixin smoothscroll {
+    @apply overflow-y-auto;
+    -webkit-overflow-scrolling: touch;
 }

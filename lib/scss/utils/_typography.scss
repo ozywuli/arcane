@@ -20,7 +20,9 @@
 
 .copy-danger {
     @apply text-red;
-    .no-touchevents &:hover {
-        @apply text-red-dark;
+    @media (hover: hover) {
+        &:hover {
+            @apply text-red-dark;
+        }
     }
 }

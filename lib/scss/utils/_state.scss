@@ -16,9 +16,11 @@
 }
 
 .close-hover {
-    .no-touchevents &:hover {
-        .close-icon-bar {
-            background: color(link-hover);
+    @media (hover: hover) {
+        &:hover {
+            .close-icon-bar {
+                background: color(link-hover);
+            }
         }
     }
 }

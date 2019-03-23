@@ -1,18 +1,20 @@
 .el-button {
-    @apply text-center text-white px-16 py-8 text-xs;
+    @apply text-center text-white px-24 py-8 text-xs;
     border: 1px solid color(border);
     font-family: font(monospace);
     text-transform: uppercase;
     background: transparent;
 
-    .no-touchevents &:hover {
-        cursor: pointer;
-        background: color(border);
-    }
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background: color(border);
+        }
 
-    .no-touchevents &:focus {
-        @apply border border-solid border-color-link;
-        outline: none;
+        &:focus {
+            @apply border border-solid border-color-link;
+            outline: none;
+        }
     }
 }
 
@@ -22,8 +24,11 @@
 
 .el-button-blue {
     background: color(link);
-    .no-touchevents &:hover {
-        cursor: pointer;
-        background: color(link-hover);
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background: color(link-hover);
+        }
     }
 }

@@ -7,12 +7,35 @@
     @apply flex items-center justify-center;
     @apply border border-solid border-color-border;
     @apply w-32 h-32 ml-8;
+    @include link();
 
-    .no-touchevents &:hover {
-        @apply border-color-link-hover bg-color-link-hover text-white;
+    &--inactive {
+        @media (hover: hover) {
+            &:hover {
+
+            }
+        }
     }
 
     &--active {
-        @apply border-color-link-hover bg-color-link text-white;
+        @apply border-color-border bg-color-link text-white;
+        @media (hover: hover) {
+            &:hover {
+                @apply text-white;
+            }
+        }
+    }
+
+    &--disabled {
+        @apply text-color-copy cursor-not-allowed;
+        @media (hover: hover) {
+            &:hover {
+                @apply text-color-copy;
+            }
+        }
+
+        * {
+            @apply opacity-50;
+        }
     }
 }

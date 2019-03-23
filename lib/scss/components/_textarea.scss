@@ -1,0 +1,10 @@
+.s-textarea {
+
+}
+
+.s-textarea-field {
+
+    &.is-invalid {
+        border: 1px solid config('colors.red');
+    }
+}
